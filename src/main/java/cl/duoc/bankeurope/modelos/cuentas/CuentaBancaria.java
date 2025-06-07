@@ -1,6 +1,6 @@
-package cl.duoc.bankeurope.modelos;
+package cl.duoc.bankeurope.modelos.cuentas;
 
-public  abstract class CuentaBancaria {
+public  abstract class CuentaBancaria  {
 
     protected long saldo;
     protected long numeroCuenta;
