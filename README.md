@@ -1,4 +1,4 @@
-Proyecto Bank Europe 
+Proyecto Bank Europe. 
 Es un proyecto de gestión de cuentas bancarias del Bank_Europe 
 
 Funcionalidades
