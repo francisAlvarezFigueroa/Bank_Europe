@@ -7,15 +7,18 @@ import static cl.duoc.bankeurope.constantes.Constantes.*;
 public class Main {
     public static void main(String[] args) {
 
-        // CREAR BANCO________________________________________________________________________________
+        // CREAR BANCO
+        // ______________________________________________________________________________________________________________
         Banco bancoEurope = new Banco();
         //System.out.println("Nombre banco: " + bancoEurope.getNombre()); // verificar creación objeto banco
         //System.out.println("Cantidad empleados: " + bancoEurope.getCantidadEmpleados());
 
         // BIENVENIDA AL SISTEMA
+        // _____________________________________________________________________________________________________________
         System.out.println("    BIENVENIDO AL SISTEMA DE GESTIÓN DE CUENTAS DEL BANK EUROPE 🏦📚    ");
 
-        // MENU PRINCIPAL_____________________________________________________________________________
+        // MENU PRINCIPAL
+        // _____________________________________________________________________________________________________________
         mostrarEncabezado(MENU_PRINCIPAL);
         int opcMenuPrincipal=0;
         do {
@@ -44,6 +47,7 @@ public class Main {
     }
 
     private static void aplicarTransacciones (int opcMenuPrincipal, Banco bankEurope){
+        //todo: implementar estas funcionalidades
         switch (opcMenuPrincipal){
             case 1: // REGISTRAR CLIENTE_____________________________________________________________
                 break;

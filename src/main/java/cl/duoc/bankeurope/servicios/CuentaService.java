@@ -8,6 +8,8 @@ import static cl.duoc.bankeurope.constantes.Constantes.*;
 
 public class CuentaService {
 
+    // STATIC METHODS___________________________________________________________________________________________________
+
     public static CuentaBancaria crearCuentaNueva (String tipoCuenta, long numeroCuenta){
         switch (tipoCuenta){
             case OPCION_CUENTA_CORRIENTE:

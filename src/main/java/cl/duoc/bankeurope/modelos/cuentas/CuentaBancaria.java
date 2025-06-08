@@ -1,6 +1,10 @@
 package cl.duoc.bankeurope.modelos.cuentas;
 
 public  abstract class CuentaBancaria  {
+    //todo: metodos abstractos para depositar y girar que cada cuenta imlpemente diferente segun necesite
+
+    // todo: crear metodo abstracto para mostrar saldo
+    //todo: revisar como calcular interes mirando ejemplo cuenta ahorro bankBoston
 
     protected long saldo;
     protected long numeroCuenta;
