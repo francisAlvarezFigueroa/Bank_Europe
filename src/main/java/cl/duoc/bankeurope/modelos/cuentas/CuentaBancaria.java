@@ -4,10 +4,17 @@ public  abstract class CuentaBancaria  {
 
     protected long saldo;
     protected long numeroCuenta;
-
+    protected float porcentajeInteres;
 
 
     // CONSTRUCTOR Y SOBRECARGA DE CONSTRUCTOR _______________________________________________________
+
+    public CuentaBancaria(long saldo, long numeroCuenta, float porcentajeInteres) {
+        this.saldo = saldo;
+        this.numeroCuenta = numeroCuenta;
+        this.porcentajeInteres = porcentajeInteres;
+    }
+
     public CuentaBancaria(long saldo, long numeroCuenta) {
         this.saldo = saldo;
         this.numeroCuenta = numeroCuenta;
@@ -34,6 +41,14 @@ public  abstract class CuentaBancaria  {
 
     public void setNumeroCuenta (long numeroCuenta) {
         this.numeroCuenta = numeroCuenta;
+    }
+
+    public float getPorcentajeInteres() {
+        return porcentajeInteres;
+    }
+
+    public void setPorcentajeInteres(float porcentajeInteres) {
+        this.porcentajeInteres = porcentajeInteres;
     }
 
     // MÉTODO ABSTRACTO PARA CALCULAR INTERÉS_________________________________________________________
