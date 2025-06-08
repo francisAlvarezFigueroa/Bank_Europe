@@ -1,9 +1,8 @@
 package cl.duoc.bankeurope.modelos.cuentas;
-import cl.duoc.bankeurope.interfaces.InfoCliente;
-import static cl.duoc.bankeurope.constantes.Constantes.OPCION_CUENTA_CORRIENTE;
+import cl.duoc.bankeurope.interfaces.InfoCuenta;
 import static cl.duoc.bankeurope.constantes.Constantes.OPCION_CUENTA_DIGITAL;
 
-public class CuentaDigital extends CuentaBancaria implements InfoCliente {
+public class CuentaDigital extends CuentaBancaria implements InfoCuenta {
 
     protected long limiteMontoDiario;
 
@@ -34,11 +33,11 @@ public class CuentaDigital extends CuentaBancaria implements InfoCliente {
 
     //METHODS _______________________________________________________________________________________
     @Override
-    public void mostrarInformacionCliente() {
+    public void mostrarInformacionCuenta() {
         System.out.println("Tipo de cuenta      : " + OPCION_CUENTA_DIGITAL);
         System.out.println("Número de cuenta    : " + getNumeroCuenta());
-        System.out.println("Saldo               : " + getSaldo());
-        System.out.println("Limite monto diario : " + getLimiteMontoDiario());
+        System.out.println("Saldo               : $" + getSaldo());
+        System.out.println("Limite monto diario : $" + getLimiteMontoDiario());
     }
 
     @Override
