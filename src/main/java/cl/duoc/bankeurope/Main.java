@@ -9,8 +9,8 @@ public class Main {
 
         // CREAR BANCO________________________________________________________________________________
         Banco bancoEurope = new Banco();
-        System.out.println("Nombre banco: " + bancoEurope.getNombre()); // verificar creación objeto banco
-        System.out.println("Cantidad empleados: " + bancoEurope.getCantidadEmpleados());
+        //System.out.println("Nombre banco: " + bancoEurope.getNombre()); // verificar creación objeto banco
+        //System.out.println("Cantidad empleados: " + bancoEurope.getCantidadEmpleados());
 
         // BIENVENIDA AL SISTEMA
         System.out.println("    BIENVENIDO AL SISTEMA DE GESTIÓN DE CUENTAS DEL BANK EUROPE 🏦📚    ");
@@ -25,13 +25,12 @@ public class Main {
             if(!LISTA_OPCIONES.contains(opcMenuPrincipal)){
                 System.out.println("Opción ingresada no es válida. Intente nuevamente.");
             }else{
+                System.out.println("aplicar transacciones");
 
             }
         }while(opcMenuPrincipal!=7 || (opcMenuPrincipal<1 || opcMenuPrincipal>7));
-
     }
 
-    // MOSTRAR METODOS A USAR EN MENU
 
     private static void mostrarMenuPrincipal (){
         System.out.println("|            1. REGISTRAR CLIENTE                                                         |");
