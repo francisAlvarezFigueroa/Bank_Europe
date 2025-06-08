@@ -1,8 +1,8 @@
 package cl.duoc.bankeurope.modelos.cuentas;
 import static cl.duoc.bankeurope.constantes.Constantes.*;
-import cl.duoc.bankeurope.interfaces.InfoCliente;
+import cl.duoc.bankeurope.interfaces.InfoCuenta;
 
-public class CuentaCorriente extends CuentaBancaria implements InfoCliente {
+public class CuentaCorriente extends CuentaBancaria implements InfoCuenta {
 
     protected long limiteSobregiro;  // todas las cuentas corrientes inician con 200.000 de sobregiro
     protected long sobregiroActual;
@@ -49,12 +49,12 @@ public class CuentaCorriente extends CuentaBancaria implements InfoCliente {
 
     // METHODS_______________________________________________________________________________________
     @Override
-    public void mostrarInformacionCliente() {
+    public void mostrarInformacionCuenta() {
         System.out.println("Tipo de cuenta      : " + OPCION_CUENTA_CORRIENTE);
         System.out.println("Número de cuenta    : " + getNumeroCuenta());
-        System.out.println("Saldo               : " + getSaldo());
-        System.out.println("Sobregiro inicial   : " + getLimiteSobregiro());
-        System.out.println("Sobregiro Actual    : " + getSobregiroActual());
+        System.out.println("Saldo               : $" + getSaldo());
+        System.out.println("Sobregiro inicial   : $" + getLimiteSobregiro());
+        System.out.println("Sobregiro Actual    : $" + getSobregiroActual());
     }
 
     @Override

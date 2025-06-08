@@ -1,10 +1,9 @@
 package cl.duoc.bankeurope.modelos.cuentas;
-import cl.duoc.bankeurope.interfaces.InfoCliente;
+import cl.duoc.bankeurope.interfaces.InfoCuenta;
+import static cl.duoc.bankeurope.constantes.Constantes.OPCION_CUENTA_AHORRO;;
+//_____________________________________________END IMPORTS_____________________________________________________________
 
-import static cl.duoc.bankeurope.constantes.Constantes.OPCION_CUENTA_AHORRO;
-import static cl.duoc.bankeurope.constantes.Constantes.OPCION_CUENTA_CORRIENTE;
-
-public class CuentaAhorros extends CuentaBancaria implements InfoCliente {
+public class CuentaAhorros extends CuentaBancaria implements InfoCuenta{
 
     protected int cantidadGirosPermitidos;
 
@@ -48,10 +47,11 @@ public class CuentaAhorros extends CuentaBancaria implements InfoCliente {
     }
 
     @Override
-    public void mostrarInformacionCliente() {
+    public void mostrarInformacionCuenta() {
+        System.out.println("___________________________________________________________________________________________");
         System.out.println("Tipo de cuenta              : " + OPCION_CUENTA_AHORRO);
         System.out.println("Número de cuenta            : " + getNumeroCuenta());
-        System.out.println("Saldo                       : " + getSaldo());
+        System.out.println("Saldo                       : $" + getSaldo());
         System.out.println("Cantidad giros permitidos   : " + getCantidadGirosPermitidos());
     }
 }

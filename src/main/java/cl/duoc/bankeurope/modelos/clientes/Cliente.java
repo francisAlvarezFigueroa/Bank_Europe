@@ -1,8 +1,13 @@
 package cl.duoc.bankeurope.modelos.clientes;
+import cl.duoc.bankeurope.interfaces.InfoCliente;
 import cl.duoc.bankeurope.modelos.cuentas.CuentaBancaria;
+
+
+import java.sql.SQLOutput;
+
 import static cl.duoc.bankeurope.servicios.CuentaService.*;
 
-public class Cliente {
+public class Cliente implements InfoCliente {
     protected String nombre;
     protected String apellidoPaterno;
     protected String apellidoMaterno;
@@ -109,5 +114,22 @@ public class Cliente {
 
     public void setCuentabancaria(CuentaBancaria cuentabancaria) {
         this.cuentabancaria = cuentabancaria;
+    }
+
+    // METHODS _________________________________________________________________________________________________________
+
+
+    @Override
+    public void mostrarInformacionCliente() {
+        System.out.println("___________________________________________________________________________________________");
+        System.out.println("|       Nombre              : " + getNombre().toUpperCase());
+        System.out.println("|       Apellido Paterno    : " + getApellidoPaterno().toUpperCase());
+        System.out.println("|       Apellido Materno    : " + getApellidoMaterno().toUpperCase());
+        System.out.println("|       Rut                 : " + getRut().toUpperCase());
+        System.out.println("|       Domicilio           : " + getDomicilio().toUpperCase());
+        System.out.println("|       Comuna              : " + getComuna().toUpperCase());
+        System.out.println("|       Número de teléfono  : " + getNumeroTelefono());
+        System.out.println("|       Tipo de cuenta      : " + getTipoCuenta().toUpperCase());
+        System.out.println("___________________________________________________________________________________________");
     }
 }
