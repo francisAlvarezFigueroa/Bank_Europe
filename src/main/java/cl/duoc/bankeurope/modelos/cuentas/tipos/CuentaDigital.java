@@ -4,7 +4,7 @@ import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
 import static cl.duoc.bankeurope.constantes.Constantes.OPCION_CUENTA_DIGITAL;
 import static cl.duoc.bankeurope.constantes.Constantes.TIPO_MONEDA_CHILE;
 
-public class CuentaDigital extends CuentaBancaria implements InfoCuenta {
+public class CuentaDigital extends CuentaBancaria{
 
     protected long limiteMontoDiario; // no se puede recibir ni enviar montos de más de esta suma
 

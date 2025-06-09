@@ -11,11 +11,9 @@ public class Banco {
     protected long cantidadEmpleados;
 
     //HASHMAPS________________________________________________________________________________________
-    private static HashMap <String, Cliente> clientes;
-    private static HashMap<Long, CuentaBancaria> cuentasBancarias;
-    private static HashMap<Long, String> relacionCuentaCliente; // hashmap que asocia un numero de cuenta a un rut de cliente
-
-    //todo: verificar si esta bien que sean static
+    private HashMap <String, Cliente> clientes;
+    private HashMap<Long, CuentaBancaria> cuentasBancarias;
+    private HashMap<Long, String> relacionCuentaCliente; // hashmap que asocia un numero de cuenta a un rut de cliente
 
     // remember: it has to be Long because HashMaps only work w/ objects, not primitives
 
@@ -63,11 +61,11 @@ public class Banco {
         this.clientes = clientes;
     }
 
-    public static HashMap<Long, CuentaBancaria> getCuentasBancarias() {
+    public HashMap<Long, CuentaBancaria> getCuentasBancarias() {
         return cuentasBancarias;
     }
 
-    public void setCuentasBancarias(HashMap<Long, CuentaBancaria> cuentasBancarias) {
+    public  void setCuentasBancarias(HashMap<Long, CuentaBancaria> cuentasBancarias) {
         this.cuentasBancarias = cuentasBancarias;
     }
 

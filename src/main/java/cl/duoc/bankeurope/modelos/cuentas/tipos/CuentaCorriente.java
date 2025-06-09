@@ -3,7 +3,7 @@ import static cl.duoc.bankeurope.constantes.Constantes.*;
 import cl.duoc.bankeurope.interfaces.InfoCuenta;
 import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
 
-public class CuentaCorriente extends CuentaBancaria implements InfoCuenta {
+public class CuentaCorriente extends CuentaBancaria {
 
     protected long limiteSobregiro;  // todas las cuentas corrientes inician con 200.000 de sobregiro
     protected long sobregiroActual;

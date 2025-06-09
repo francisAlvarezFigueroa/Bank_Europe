@@ -4,7 +4,7 @@ import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
 import static cl.duoc.bankeurope.constantes.Constantes.*;
 //_____________________________________________END IMPORTS_____________________________________________________________
 
-public class CuentaAhorros extends CuentaBancaria implements InfoCuenta{
+public class CuentaAhorros extends CuentaBancaria{
 
     protected int cantidadGirosPermitidos;
     protected int contadorGiros;  // todas las cuentas se crean con 0 giros realizados
