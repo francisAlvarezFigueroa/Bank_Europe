@@ -1,9 +1,7 @@
 package cl.duoc.bankeurope.modelos.clientes;
 import cl.duoc.bankeurope.interfaces.InfoCliente;
-import cl.duoc.bankeurope.modelos.cuentas.CuentaBancaria;
+import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
 
-
-import java.sql.SQLOutput;
 
 import static cl.duoc.bankeurope.servicios.CuentaService.*;
 

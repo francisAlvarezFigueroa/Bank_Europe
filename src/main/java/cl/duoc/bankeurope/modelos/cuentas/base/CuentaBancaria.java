@@ -1,4 +1,4 @@
-package cl.duoc.bankeurope.modelos.cuentas;
+package cl.duoc.bankeurope.modelos.cuentas.base;
 
 public  abstract class CuentaBancaria  {
     //todo: metodos abstractos para depositar y girar que cada cuenta imlpemente diferente segun necesite
@@ -11,7 +11,7 @@ public  abstract class CuentaBancaria  {
     protected float porcentajeInteres;
 
 
-    // CONSTRUCTOR Y SOBRECARGA DE CONSTRUCTOR _______________________________________________________
+    // OVERLOADED CONSTRUCTORS_________________________________________________________________________
 
     public CuentaBancaria(long saldo, long numeroCuenta, float porcentajeInteres) {
         this.saldo = saldo;
@@ -29,7 +29,7 @@ public  abstract class CuentaBancaria  {
         saldo=0L;
     }
 
-    // GETTERS Y SETTERS _____________________________________________________________________________
+    // GETTERS AND SETTERS _____________________________________________________________________________
 
     public long getSaldo() {
         return saldo;
@@ -55,7 +55,10 @@ public  abstract class CuentaBancaria  {
         this.porcentajeInteres = porcentajeInteres;
     }
 
-    // MÉTODO ABSTRACTO PARA CALCULAR INTERÉS_________________________________________________________
+    // METHODS_________________________________________________________________________________________
 
     public abstract double calcularInteres ();  // solo declaracion, obliga implementacion en subclases
+    public abstract void depositarMonto(long monto);
+    public abstract void girarMonto(long monto);
+
 }

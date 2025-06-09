@@ -1,8 +1,8 @@
 package cl.duoc.bankeurope.servicios;
-import cl.duoc.bankeurope.modelos.cuentas.CuentaAhorros;
-import cl.duoc.bankeurope.modelos.cuentas.CuentaBancaria;
-import cl.duoc.bankeurope.modelos.cuentas.CuentaCorriente;
-import cl.duoc.bankeurope.modelos.cuentas.CuentaDigital;
+import cl.duoc.bankeurope.modelos.cuentas.tipos.CuentaAhorros;
+import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
+import cl.duoc.bankeurope.modelos.cuentas.tipos.CuentaCorriente;
+import cl.duoc.bankeurope.modelos.cuentas.tipos.CuentaDigital;
 
 import static cl.duoc.bankeurope.constantes.Constantes.*;
 

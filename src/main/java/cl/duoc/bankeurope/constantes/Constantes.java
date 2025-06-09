@@ -36,6 +36,7 @@ public class Constantes {
     public static final String MENU_GIRAR= "GIRAR";
     public static final String MENU_CONSULTAR_SALDO= "CONSULTAR SALDO";
 
+    public static final String TIPO_MONEDA_CHILE = " CLP ";  // TIPO DE MONEDA SEGÚN CORRESPONDA
 
     public static final List<Integer> LISTA_OPCIONES = Arrays.asList(OPCION_REGISTRAR_CLIENTE, OPCION_VER_DATOS_CLIENTE, OPCION_VER_DATOS_CUENTA, OPCION_DEPOSITAR_CUENTA, OPCION_GIRAR_CUENTA, OPCION_CONSULTAR_SALDO, OPCION_SALIR);
 
