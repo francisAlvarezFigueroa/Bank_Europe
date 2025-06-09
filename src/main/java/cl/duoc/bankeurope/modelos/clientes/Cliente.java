@@ -3,9 +3,7 @@ import cl.duoc.bankeurope.interfaces.InfoCliente;
 import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
 
 
-import static cl.duoc.bankeurope.servicios.ServiciosCuenta.*;
-
-public class Cliente implements InfoCliente {
+public class Cliente {
     protected String nombre;
     protected String apellidoPaterno;
     protected String apellidoMaterno;
@@ -15,10 +13,11 @@ public class Cliente implements InfoCliente {
     private String numeroTelefono;
     private long numeroCuenta;
     private String tipoCuenta;
-    private CuentaBancaria cuentabancaria;
+    private CuentaBancaria cuentaBancaria;
+
 
     // CONSTRUCTOR___________________________________________________________________________________
-    public Cliente(String nombre, String apellidoPaterno, String apellidoMaterno, String rut, String domicilio, String comuna, String numeroTelefono, long numeroCuenta, String tipoCuenta, CuentaBancaria cuentabancaria) {
+    public Cliente(String nombre, String apellidoPaterno, String apellidoMaterno, String rut, String domicilio, String comuna, String numeroTelefono, long numeroCuenta, String tipoCuenta) {
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
@@ -28,7 +27,6 @@ public class Cliente implements InfoCliente {
         this.numeroTelefono = numeroTelefono;
         this.numeroCuenta = numeroCuenta;
         this.tipoCuenta = tipoCuenta;
-        this.cuentabancaria = crearCuentaNueva(tipoCuenta, numeroCuenta);
     }
 
 
@@ -106,28 +104,12 @@ public class Cliente implements InfoCliente {
         this.tipoCuenta = tipoCuenta;
     }
 
-    public CuentaBancaria getCuentabancaria() {
-        return cuentabancaria;
+    public CuentaBancaria getCuentaBancaria() {
+        return cuentaBancaria;
     }
 
-    public void setCuentabancaria(CuentaBancaria cuentabancaria) {
-        this.cuentabancaria = cuentabancaria;
+    public void setCuentaBancaria(CuentaBancaria cuentaBancaria) {
+        this.cuentaBancaria = cuentaBancaria;
     }
 
-    // METHODS _________________________________________________________________________________________________________
-
-
-    @Override
-    public void mostrarInformacionCliente() {
-        System.out.println("___________________________________________________________________________________________");
-        System.out.println("|       Nombre              : " + getNombre().toUpperCase());
-        System.out.println("|       Apellido Paterno    : " + getApellidoPaterno().toUpperCase());
-        System.out.println("|       Apellido Materno    : " + getApellidoMaterno().toUpperCase());
-        System.out.println("|       Rut                 : " + getRut().toUpperCase());
-        System.out.println("|       Domicilio           : " + getDomicilio().toUpperCase());
-        System.out.println("|       Comuna              : " + getComuna().toUpperCase());
-        System.out.println("|       Número de teléfono  : " + getNumeroTelefono());
-        System.out.println("|       Tipo de cuenta      : " + getTipoCuenta().toUpperCase());
-        System.out.println("___________________________________________________________________________________________");
-    }
 }

@@ -2,6 +2,9 @@ package cl.duoc.bankeurope.utilidades;
 
 public class ValidadorUtil {
 
+    // valida si entradas son blank
+    // valida formatos de rut o numeros
+
 
     /** El método isFieldBlank es una forma de verificar si el usuario ingresó algún valor
      * @param field recibe un texto entrado por el usuario.

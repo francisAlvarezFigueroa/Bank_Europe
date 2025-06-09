@@ -14,6 +14,11 @@ public class GestorEntradaSalida {
 
     // METODO PARA OBETENER TEXTO DE SCANNER___________________________________________________________
 
+    // maneja entrada y salida de daots
+    // leer texto
+    // leer numero
+
+
     /** El método obtenerTextoScanner:
      * recibe mensaje, muestra mensaje y valída el imput del usuario ya que debe seguir preguntando
      * si el usuario no escribe un campo requerido
@@ -46,14 +51,7 @@ public class GestorEntradaSalida {
         return numeroLeido;
     }
 
-    public static void clearConsole() {
-        int cantidadLineas = 3;
-        for (int i = 0; i <= cantidadLineas; i++) {
-            System.out.println();
-        }
-        System.out.println("_________________________________________________________________________________________");
 
-    }
 
 
 }
