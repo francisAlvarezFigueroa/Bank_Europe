@@ -3,7 +3,7 @@ import cl.duoc.bankeurope.interfaces.InfoCliente;
 import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
 
 
-import static cl.duoc.bankeurope.servicios.CuentaService.*;
+import static cl.duoc.bankeurope.servicios.ServiciosCuenta.*;
 
 public class Cliente implements InfoCliente {
     protected String nombre;

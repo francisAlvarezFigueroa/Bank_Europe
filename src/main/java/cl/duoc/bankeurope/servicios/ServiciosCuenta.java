@@ -6,7 +6,7 @@ import cl.duoc.bankeurope.modelos.cuentas.tipos.CuentaDigital;
 
 import static cl.duoc.bankeurope.constantes.Constantes.*;
 
-public class CuentaService {
+public class ServiciosCuenta {
 
     // STATIC METHODS___________________________________________________________________________________________________
 
@@ -19,6 +19,7 @@ public class CuentaService {
             case OPCION_CUENTA_DIGITAL:
                 return new CuentaDigital(numeroCuenta);
         }
+
     return null;
         //todo: manejar este null (preguntar profe)
     }
