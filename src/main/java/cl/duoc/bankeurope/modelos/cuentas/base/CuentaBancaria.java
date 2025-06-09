@@ -1,7 +1,6 @@
 package cl.duoc.bankeurope.modelos.cuentas.base;
-
+import static cl.duoc.bankeurope.constantes.Constantes.*;
 public  abstract class CuentaBancaria  {
-    //todo: metodos abstractos para depositar y girar que cada cuenta imlpemente diferente segun necesite
 
     // todo: crear metodo abstracto para mostrar saldo
     //todo: revisar como calcular interes mirando ejemplo cuenta ahorro bankBoston
@@ -60,5 +59,13 @@ public  abstract class CuentaBancaria  {
     public abstract double calcularInteres ();  // solo declaracion, obliga implementacion en subclases
     public abstract void depositarMonto(long monto);
     public abstract void girarMonto(long monto);
+
+    public void mostrarSaldo(long numeroCuenta){
+        if (verificarCuentaExiste(numeroCuenta)) {
+            System.out.println("Saldo actual: $" + cuentas.get(numeroCuenta).getSaldo() + TIPO_MONEDA_CHILE);
+        } else {
+            System.out.println("No se ha encontrado cuenta con ese número.");
+        }
+    }
 
 }
