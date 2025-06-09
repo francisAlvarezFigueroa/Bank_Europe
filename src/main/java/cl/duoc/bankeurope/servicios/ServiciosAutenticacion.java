@@ -1,4 +1,4 @@
 package cl.duoc.bankeurope.servicios;
 
-public class AutenticacionService {
+public class ServiciosAutenticacion {
 }

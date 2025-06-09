@@ -60,12 +60,14 @@ public  abstract class CuentaBancaria  {
     public abstract void depositarMonto(long monto);
     public abstract void girarMonto(long monto);
 
-    public void mostrarSaldo(long numeroCuenta){
+   /* public void mostrarSaldo(long numeroCuenta){
         if (verificarCuentaExiste(numeroCuenta)) {
             System.out.println("Saldo actual: $" + cuentas.get(numeroCuenta).getSaldo() + TIPO_MONEDA_CHILE);
         } else {
             System.out.println("No se ha encontrado cuenta con ese número.");
         }
     }
+
+    */
 
 }
