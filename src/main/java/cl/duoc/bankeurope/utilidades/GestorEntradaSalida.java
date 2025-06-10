@@ -1,12 +1,9 @@
 package cl.duoc.bankeurope.utilidades;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static cl.duoc.bankeurope.utilidades.ValidadorUtil.*;
 
-/** La clase GestorEntradaSalida gestiona los mensajes al usuario desde la consola
- * y recoge la información que provee el usuario. Los métodos empleados aquí son estáticos
- * ya que quiero usarlos sin instanciar la clase, quiero que estén disponibles independiente de su clase.
-  */
 
 
 public class GestorEntradaSalida {
@@ -14,16 +11,8 @@ public class GestorEntradaSalida {
 
     // METODO PARA OBETENER TEXTO DE SCANNER___________________________________________________________
 
-    // maneja entrada y salida de daots
-    // leer texto
-    // leer numero
 
-
-    /** El método obtenerTextoScanner:
-     * recibe mensaje, muestra mensaje y valída el imput del usuario ya que debe seguir preguntando
-     * si el usuario no escribe un campo requerido
-     */
-    public static String obtenerTextoScanner (String mensajeParaUsuario){
+    public static String obtenerTextoScanner(String mensajeParaUsuario){
         String lineaLeida= "";
         do {
             System.out.println(mensajeParaUsuario); // muestra el mensaje al usuario
@@ -49,6 +38,90 @@ public class GestorEntradaSalida {
             }
         }while(!opcValida);
         return numeroLeido;
+    }
+
+    public static long obtenerNumeroCuentaEntrada(String mensaje) {
+        Long numeroCuenta = null;
+        boolean entradaValida = false;
+
+        while (!entradaValida) {
+            System.out.print(mensaje);
+            try {
+                numeroCuenta = scanner.nextLong();
+                scanner.nextLine(); // Limpiar el buffer: consume el resto de la línea, incluyendo el '\n'
+                int longitud = String.valueOf(Math.abs(numeroCuenta)).length();
+                if (longitud==9) {
+                    entradaValida = true; // Si llegamos aquí, la entrada es válida
+                }
+            } catch (InputMismatchException e) {
+                // Captura si el usuario no introduce un entero
+                System.out.println("Entrada inválida. Por favor, introduzca un número válido.");
+                scanner.nextLine(); // Importante: Limpiar el buffer de la entrada incorrecta para evitar un bucle infinito
+            } catch (Exception e) {
+                // Captura cualquier otra excepción inesperada
+                System.out.println("Ocurrió un error inesperado al leer la entrada: " + e.getMessage());
+                scanner.nextLine(); // Limpiar el buffer por si acaso
+            }
+        }
+        return numeroCuenta;
+    }
+
+    public static long obtenerMontoEntrada(String mensaje) {
+        Long monto = null;
+        boolean entradaValida = false;
+
+        while (!entradaValida) {
+            System.out.print(mensaje);
+            try {
+                monto = scanner.nextLong();
+                scanner.nextLine(); // Limpiar el buffer: consume el resto de la línea, incluyendo el '\n'
+                if (monto > 0) {
+                    entradaValida = true; // Si llegamos aquí, la entrada es válida
+                } else {
+                    System.out.println("Entrada inválida. Por favor, introduzca un monto válido.");
+                }
+            } catch (InputMismatchException e) {
+                // Captura si el usuario no introduce un entero
+                System.out.println("Entrada inválida. Por favor, introduzca un monto válido.");
+                scanner.nextLine(); // Importante: Limpiar el buffer de la entrada incorrecta para evitar un bucle infinito
+            } catch (Exception e) {
+                // Captura cualquier otra excepción inesperada
+                System.out.println("Ocurrió un error inesperado al leer la entrada: " + e.getMessage());
+                scanner.nextLine(); // Limpiar el buffer por si acaso
+            }
+        }
+        return monto;
+    }
+    public static String obtenerRutDeEntrada(String mensaje) {
+        String rut = "";
+        do {
+            rut = obtenerTextoScanner(mensaje);
+            if (!validarFormatoRut(rut)) {
+                System.out.println("Formato incorrecto. Ejemplo válido: 1.123.456-7");
+            }
+        } while (!validarFormatoRut(rut));
+        return rut;
+    }
+
+    public static boolean validarFormatoRut(String rut) {
+        return rut.matches("^\\d{1,2}\\.\\d{3}\\.\\d{3}-[\\dkK]$");
+    }
+
+    public static String obtenerTextoDeEntrada(String mensaje) {
+        String texto = "";
+        do {
+            texto = obtenerTextoScanner(mensaje);
+        } while (isFieldBlank(texto));
+        return texto;
+    }
+
+
+    public static boolean isFieldBlank(String field) {
+        if (field.isBlank()) {
+            System.out.println("Campo requerido, por favor ingrese valor.");
+            return true;
+        }
+        return false;
     }
 
 

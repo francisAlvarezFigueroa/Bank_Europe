@@ -1,7 +1,10 @@
 package cl.duoc.bankeurope;
+import cl.duoc.bankeurope.controladores.ControladorBanco;
 import cl.duoc.bankeurope.modelos.Banco;
+import cl.duoc.bankeurope.modelos.clientes.Cliente;
 import cl.duoc.bankeurope.servicios.ServiciosBanco;
-
+import cl.duoc.bankeurope.servicios.ServiciosCliente;
+import cl.duoc.bankeurope.servicios.ServiciosCuenta;
 import static cl.duoc.bankeurope.utilidades.ConsolaUtil.*;
 import static cl.duoc.bankeurope.utilidades.GestorEntradaSalida.*; // importa todos los métodos estáticos
 import static cl.duoc.bankeurope.constantes.Constantes.*;
@@ -14,6 +17,11 @@ public class Main {
 
         Banco bancoEurope = new Banco();
         ServiciosBanco serviciosBanco = new ServiciosBanco(bancoEurope);
+        ServiciosCliente serviciosCliente = new ServiciosCliente(serviciosBanco);
+        ServiciosCuenta serviciosCuenta = new ServiciosCuenta(serviciosBanco, bancoEurope);
+        ControladorBanco controladorBanco= new ControladorBanco(serviciosBanco);
+        //________________________________________________________________________________________________________________
+
 
         // BIENVENIDA AL SISTEMA
         // _____________________________________________________________________________________________________________
@@ -25,14 +33,18 @@ public class Main {
         int opcMenuPrincipal=0;
         do {
             mostrarMenuPrincipal();
+
             opcMenuPrincipal=obtenerNumeroScanner("Ingrese el número de la acción que desea realizar: (1-7) ", 1,7);
+
             clearConsole(); // deja espacio para que se vea el mensaje
+
             if(!LISTA_OPCIONES.contains(opcMenuPrincipal)){
                 System.out.println("Opción ingresada no es válida. Intente nuevamente.");
+
             }else{
-                aplicarTransacciones(opcMenuPrincipal, bancoEurope);
+                aplicarTransacciones(opcMenuPrincipal,bancoEurope, serviciosBanco,serviciosCuenta,serviciosCliente,controladorBanco);
             }
-        }while(opcMenuPrincipal!=7 || (opcMenuPrincipal<1 || opcMenuPrincipal>7));
+        }while(opcMenuPrincipal!=7);
     }
 
 
@@ -48,34 +60,46 @@ public class Main {
         System.out.println("|_________________________________________________________________________________________|");
     }
 
-    private static void aplicarTransacciones (int opcMenuPrincipal, Banco bankEurope){
+    private static void aplicarTransacciones (int opcMenuPrincipal, Banco bankEurope, ServiciosBanco serviciosBanco, ServiciosCuenta serviciosCuenta, ServiciosCliente serviciosCliente, ControladorBanco controladorBanco){
 
         switch (opcMenuPrincipal){
             case 1: // REGISTRAR CLIENTE_____________________________________________________________
                 mostrarEncabezado(MENU_REGISTRAR_CLIENTE);
-
+                Cliente cliente =  controladorBanco.registrarClienteDesdeConsola();
+                serviciosBanco.registrarCliente(cliente);
+                clearConsole();
                 break;
             case 2: // VER DATOS CLIENTE_____________________________________________________________
                 mostrarEncabezado(MENU_DATOS_CLIENTE);
+                controladorBanco.verDatosCliente(bankEurope);
+                clearConsole();
                 break;
             case 3: // VER DATOS CUENTA______________________________________________________________
                 mostrarEncabezado(MENU_DATOS_CUENTA);
+                controladorBanco.verDatosCuenta(bankEurope);
+                clearConsole();
                 break;
             case 4: // DEPOSITAR_____________________________________________________________________
                 mostrarEncabezado(MENU_DEPOSITAR);
+                controladorBanco.depositar(bankEurope,serviciosCuenta);
+                clearConsole();
                 break;
             case 5: // GIRAR_________________________________________________________________________
                 mostrarEncabezado(MENU_GIRAR);
+                controladorBanco.girar(bankEurope, serviciosCuenta);
+                clearConsole();
                 break;
             case 6: // CONSULTAR SALDO_______________________________________________________________
                 mostrarEncabezado(MENU_CONSULTAR_SALDO);
+                controladorBanco.consultarSaldo(bankEurope);
+                clearConsole();
                 break;
             case 7: // SALIR_________________________________________________________________________
-
                 System.out.println("Saliendo del sistema...");
                 mostrarMensajeDespedida(NOMBRE_BANCO);
                 break;
         }
     }
+
 
 }

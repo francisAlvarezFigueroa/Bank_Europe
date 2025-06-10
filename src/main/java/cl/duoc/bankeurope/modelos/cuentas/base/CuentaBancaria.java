@@ -1,7 +1,5 @@
 package cl.duoc.bankeurope.modelos.cuentas.base;
 import cl.duoc.bankeurope.interfaces.InfoCuenta;
-
-import static cl.duoc.bankeurope.constantes.Constantes.*;
 public  abstract class CuentaBancaria implements InfoCuenta {
 
     // todo: crear metodo abstracto para mostrar saldo
@@ -67,14 +65,5 @@ public  abstract class CuentaBancaria implements InfoCuenta {
 
     }
 
-    /* public void mostrarSaldo(long numeroCuenta){
-        if (verificarCuentaExiste(numeroCuenta)) {
-            System.out.println("Saldo actual: $" + cuentas.get(numeroCuenta).getSaldo() + TIPO_MONEDA_CHILE);
-        } else {
-            System.out.println("No se ha encontrado cuenta con ese número.");
-        }
-    }
-
-    */
 
 }

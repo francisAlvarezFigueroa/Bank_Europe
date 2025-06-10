@@ -49,14 +49,13 @@ public class ServiciosBanco {
 
         // asignar la cuenta al cliente
         cliente.setCuentaBancaria(cuentaNueva);
-        //todo: volver a este problema
 
         //registrar al cliente y su cuenta
 
         banco.getClientes().put(cliente.getRut(), cliente); // agrego al nuevo cliente a mi HM
         banco.getCuentasBancarias().put(cliente.getNumeroCuenta(), cuentaNueva); // asocia numero de cuenta con Cuenta
         banco.getRelacionCuentaCliente().put(cliente.getNumeroCuenta(), cliente.getRut()); // asocia numero de cuenta con rut
-        mostrarMensajeRegistroClienteExitoso(cliente.getRut());
+        mostrarMensajeRegistroClienteExitoso(String.valueOf(cliente.getRut()));
     }
 
     public CuentaBancaria crearCuentaNueva(String tipoCuenta, long numeroCuenta) {

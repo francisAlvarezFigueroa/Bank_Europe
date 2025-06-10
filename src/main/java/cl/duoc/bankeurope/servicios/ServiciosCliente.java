@@ -16,10 +16,10 @@ public class ServiciosCliente implements InfoCliente {
          if(serviciosBanco.verificarClienteExiste(cliente.getRut())) {
              mostrarEncabezado("Información Cliente");
              System.out.println("___________________________________________________________________________________________");
+             System.out.println("|       Rut                 : " + cliente.getRut().toUpperCase());
              System.out.println("|       Nombre              : " + cliente.getNombre().toUpperCase());
              System.out.println("|       Apellido Paterno    : " + cliente.getApellidoPaterno().toUpperCase());
              System.out.println("|       Apellido Materno    : " + cliente.getApellidoMaterno().toUpperCase());
-             System.out.println("|       Rut                 : " + cliente.getRut().toUpperCase());
              System.out.println("|       Domicilio           : " + cliente.getDomicilio().toUpperCase());
              System.out.println("|       Comuna              : " + cliente.getComuna().toUpperCase());
              System.out.println("|       Número de teléfono  : " + cliente.getNumeroTelefono());
@@ -39,4 +39,8 @@ public class ServiciosCliente implements InfoCliente {
         cliente.getCuentaBancaria().mostrarInformacionCuenta();
     }
 
+    public void mostrarInformacionCliente(String rutCliente) {
+        mostrarInformacionCliente(rutCliente);
+        //error
+    }
 }

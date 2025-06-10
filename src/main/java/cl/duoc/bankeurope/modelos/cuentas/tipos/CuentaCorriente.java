@@ -1,6 +1,5 @@
 package cl.duoc.bankeurope.modelos.cuentas.tipos;
 import static cl.duoc.bankeurope.constantes.Constantes.*;
-import cl.duoc.bankeurope.interfaces.InfoCuenta;
 import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
 
 public class CuentaCorriente extends CuentaBancaria {
