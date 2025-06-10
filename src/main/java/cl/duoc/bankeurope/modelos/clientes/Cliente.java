@@ -1,5 +1,4 @@
 package cl.duoc.bankeurope.modelos.clientes;
-import cl.duoc.bankeurope.interfaces.InfoCliente;
 import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
 
 
@@ -10,18 +9,18 @@ public class Cliente {
     protected String rut;
     private String domicilio;
     private String comuna;
-    private String numeroTelefono;
+    private int numeroTelefono;
     private long numeroCuenta;
     private String tipoCuenta;
     private CuentaBancaria cuentaBancaria;
 
 
     // CONSTRUCTOR___________________________________________________________________________________
-    public Cliente(String nombre, String apellidoPaterno, String apellidoMaterno, String rut, String domicilio, String comuna, String numeroTelefono, long numeroCuenta, String tipoCuenta) {
+    public Cliente(String rut, String nombre, String apellidoPaterno, String apellidoMaterno, String domicilio, String comuna, int numeroTelefono, long numeroCuenta, String tipoCuenta) {
+        this.rut = rut;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
-        this.rut = rut;
         this.domicilio = domicilio;
         this.comuna = comuna;
         this.numeroTelefono = numeroTelefono;
@@ -80,11 +79,11 @@ public class Cliente {
         this.comuna = comuna;
     }
 
-    public String getNumeroTelefono() {
+    public int getNumeroTelefono() {
         return numeroTelefono;
     }
 
-    public void setNumeroTelefono(String numeroTelefono) {
+    public void setNumeroTelefono(int numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
     }
 

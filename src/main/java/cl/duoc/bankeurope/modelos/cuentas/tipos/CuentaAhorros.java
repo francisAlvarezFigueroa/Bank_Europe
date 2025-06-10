@@ -1,5 +1,4 @@
 package cl.duoc.bankeurope.modelos.cuentas.tipos;
-import cl.duoc.bankeurope.interfaces.InfoCuenta;
 import cl.duoc.bankeurope.modelos.cuentas.base.CuentaBancaria;
 import static cl.duoc.bankeurope.constantes.Constantes.*;
 //_____________________________________________END IMPORTS_____________________________________________________________
